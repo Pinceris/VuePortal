@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import SignUp from './views/SignUp'
 import Login from './views/Login.vue'
 import Dashboard from './views/Dashboard.vue'
+import Chat from './views/Chat.vue'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: Chat
     },
     {
       path: '/dashboard',

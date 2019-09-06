@@ -26,7 +26,7 @@
             }
         },
         mounted(){
-          if(this.$props.category === 'newest'){
+          if(this.$props.category === 'Newest'){
               for( var i = 0; i < this.$props.categories.length; i++){
                   db.collection('categories').doc(this.$props.categories[i].id).collection('movie').get()
                       .then((querySnapshot) => {

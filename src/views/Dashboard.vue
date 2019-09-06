@@ -11,7 +11,7 @@
         </div>
         <tab-movie
             category="newest"
-            v-if="category === 'newest'"
+            v-if="activeCategory === 'newest'"
             :categories="categories"></tab-movie>
         <tab-movie
                 v-for="category in categories"
@@ -32,6 +32,7 @@
         },
         data() {
             return {
+
                 categories: [],
                 activeCategory: 'Newest'
             }
