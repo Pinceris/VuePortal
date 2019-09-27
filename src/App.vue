@@ -6,14 +6,14 @@
         <a class="navbar-item" href="/dashboard">
           VueTube
         </a>
-
       </div>
 
       <div class="navbar-menu">
         <div class="navbar-start">
           <router-link to="/" class="navbar-item">Home</router-link>
           <router-link to="/about" class="navbar-item">About</router-link>
-          <router-link to="/chat" class="navbar-item">Chat</router-link>
+          <router-link to="/EnterChat" class="navbar-item">Chat</router-link>
+          <router-link to="/music" class="navbar-item">Music</router-link>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
@@ -25,7 +25,7 @@
                 <router-link to="/login" class="navbar-item button is-link">Login</router-link>
               </p>
             </div>
-            <div class="field" v-else>
+            <div class="field" v-else-if="">
               <div class="field is-grouped" >
                 <p class="control">
                   <button @click="showCategoryForm=!showCategoryForm" class="button is-primary">Add category</button>
@@ -130,8 +130,8 @@
         const category = {
           title: this.title
         }
-        db.collection('categories').add(category)
-        this.showCategoryForm = false
+        db.collection('categories').add(category);
+        this.showCategoryForm = false;
         this.title = ''
       },
       addMovie(){
@@ -139,13 +139,13 @@
           const movie = {
             title: this.title,
             url: this.url
-          }
+          };
 
-          db.collection('categories').doc(this.category).collection('movies').add(movie)
+          db.collection('categories').doc(this.category).collection('movies').add(movie);
 
-          this.title = ''
-          this.category = 'empty'
-          this.url = ''
+          this.title = '';
+          this.category = 'empty';
+          this.url = '';
           this.showMovieForm = false
         }
         else{
@@ -155,7 +155,7 @@
       logout(){
         firebase.auth().signOut()
                 .then(()=> {
-                  this.isAuthenticated=false
+                  this.isAuthenticated=false;
                   this.$router.push('/login')
                 })
       }

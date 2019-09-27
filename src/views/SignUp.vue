@@ -45,14 +45,14 @@
         created() {
             firebase.auth().onAuthStateChanged(user => {
                 if(user){
-                    this.isAuthenticated = true
+                    this.isAuthenticated = true;
                     this.$router.push('./dashboard')
                 }
             })
         },
         methods: {
             signUp() {
-                console.log('signup')
+                console.log('signup');
                 firebase.auth().createUserWithEmailAndPassword(this.email,this.password)
                     .catch(error => alert(error.message))
             }

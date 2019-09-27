@@ -7,7 +7,7 @@
                 </label>
                 <p class="text is-danger" v-if="errorText">{{ errorText }}</p>
             </div>
-            <button class="btn btn-primary" type="submit" name="action">Submit</button>
+            <button class="button is-success" type="submit" name="action">Submit</button>
         </form>
     </div>
 </template>

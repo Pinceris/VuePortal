@@ -5,6 +5,8 @@ import SignUp from './views/SignUp'
 import Login from './views/Login.vue'
 import Dashboard from './views/Dashboard.vue'
 import Chat from './views/Chat.vue'
+import EnterChat from "./views/EnterChat";
+import Music from "./views/Music";
 
 Vue.use(Router)
 
@@ -44,6 +46,16 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/EnterChat',
+      name: 'EnterChat',
+      component: EnterChat
+    },
+    {
+      path: '/music',
+      name: 'music',
+      component: Music
     }
   ]
 })

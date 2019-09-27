@@ -26,7 +26,7 @@
         methods: {
             login() {
                 if (this.name) {
-                    this.$router.push({name: 'about', params: {name: this.name}})
+                    this.$router.push({name: 'chat', params: {name: this.name}})
                 } else {
                     this.errorText = "Please enter a name!"
                 }

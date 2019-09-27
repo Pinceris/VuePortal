@@ -1,6 +1,7 @@
 <template>
     <div class="columns is-multiline">
-        <div class="card column is-4" v-for="movie in movies":key="movie.id">
+        <div class="card column is-4" v-for="movie in movies" :key="movie.id">
+            <a :href="'http://www.localhost:4000/download?URL=' + movie.url" class="button is-success" >Download</a>
             <div class="card-image">
                     <iframe :src="embedable(movie.url)" width="100%" height="200%"></iframe>
             </div>
